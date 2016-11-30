@@ -11,9 +11,13 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>		
+		<db.driver>${PG_DRIVER}</db.driver>
+		<db.url>${PG_URL}</db.url>
+		<db.username>${PG_USERNAME}</db.username>
+		<db.password>${PG_PASSWORD}</db.password>		
 	</properties>
-
+	
 	<build>
 		<plugins>
 			<plugin>
@@ -29,6 +33,12 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		 <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>     
 	</build>
 
 	<dependencies>
